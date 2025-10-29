@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bilal Ahmed — Portfolio</title>
+  <meta name="description" content="Bilal Ahmed — Software Engineering Student | C++ & Java Developer | MUET Jamshoro" />
+
+  <!-- Simple, self-contained VIP portfolio (Black + Red Brabus-style) -->
+  <style>
+    :root{
+      --bg:#050507;
+      --card:#0b0b0d;
+      --accent:#ff214f;
+      --accent-2:#ff6b8a;
+      --muted:#9aa0a6;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial; background: radial-gradient(1000px 400px at 10% 10%, rgba(255,33,79,0.03), transparent), radial-gradient(900px 300px at 90% 90%, rgba(255,107,138,0.02), transparent), var(--bg); color:#e6eef6}
+
+    /* layout */
+    .container{max-width:1100px;margin:40px auto;padding:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);backdrop-filter: blur(6px);border-radius:16px;padding:28px;box-shadow: 0 10px 30px rgba(0,0,0,0.6)}
+
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:14px;overflow:hidden;flex:0 0 120px;border:1px solid rgba(255,255,255,0.06)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+    h1{margin:0;font-size:28px}
+    h2{margin:6px 0 0;font-weight:600;color:var(--muted);font-size:14px}
+
+    .typewriter{margin-top:12px;height:30px}
+    .typewriter .text{display:inline-block;padding:6px 10px;border-radius:8px;background:linear-gradient(90deg, rgba(0,0,0,0.2), rgba(255,255,255,0.02));font-weight:600}
+
+    .actions{margin-left:auto;display:flex;gap:10px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--card),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.03);color:#fff;text-decoration:none;font-weight:600}
+    .btn.dark{background:transparent;border:1px solid rgba(255,255,255,0.04)}
+    .btn.accent{background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 6px 20px rgba(255,33,79,0.12)}
+
+    /* grid */
+    .grid{display:grid;grid-template-columns: 1fr 360px;gap:20px;margin-top:20px}
+    .section{margin-bottom:20px}
+
+    /* skills */
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);font-weight:700}
+
+    /* projects */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .project{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.03);transition:transform .35s ease, box-shadow .35s ease}
+    .project:hover{transform:translateY(-6px);box-shadow: 0 20px 50px rgba(0,0,0,0.6)}
+    .project h3{margin:0;font-size:16px}
+    .project p{margin:8px 0 0;color:var(--muted);font-size:13px}
+    .project .meta{margin-top:10px;display:flex;justify-content:space-between;align-items:center}
+    .lang{padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.02);font-weight:700}
+
+    /* right column */
+    .profile-card{position:sticky;top:32px}
+    .stat{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02);margin-bottom:12px}
+    .stat strong{font-size:18px}
+    .muted{color:var(--muted)}
+
+    /* animated background lines */
+    .bg-lines{position:fixed;inset:0;pointer-events:none;z-index:0}
+    .line{position:absolute;height:2px;background:linear-gradient(90deg, rgba(255,33,79,0.0), rgba(255,33,79,0.12), rgba(255,33,79,0.0));opacity:0.7;filter:blur(6px)}
+    .l1{top:10%;left:-30%;width:60%;animation:slide 18s linear infinite}
+    .l2{top:35%;left:-40%;width:80%;animation:slide 26s linear -5s infinite}
+    .l3{top:70%;left:-20%;width:50%;animation:slide 22s linear -3s infinite}
+    @keyframes slide{0%{transform:translateX(0)}50%{transform:translateX(120%)}100%{transform:translateX(0)}}
+
+    /* footer */
+    footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media(max-width:900px){.grid{grid-template-columns:1fr}.avatar{width:92px;height:92px}.projects{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <div class="bg-lines" aria-hidden>
+    <div class="line l1"></div>
+    <div class="line l2"></div>
+    <div class="line l3"></div>
+  </div>
+
+  <div class="container">
+    <div class="card" style="position:relative;z-index:2">
+      <header>
+        <div class="avatar">
+          <!-- Replace 'assets/profile.jpg' with your profile image path in the repo -->
+          <img src="assets/profile.jpg" alt="Bilal Ahmed">
+        </div>
+        <div style="min-width:0">
+          <h1>Bilal Ahmed <span style="color:var(--accent);">· C++ & Java</span></h1>
+          <h2>2nd Year — Software Engineering, MUET Jamshoro</h2>
+
+          <div class="typewriter" aria-hidden>
+            <span class="text" id="type-text"></span>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+            <a class="btn dark" href="https://github.com/kwerjdak" target="_blank">GitHub</a>
+            <a class="btn" href="https://github.com/kwerjdak" target="_blank">View Repos</a>
+            <a class="btn accent" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="https://www.linkedin.com/in/bilal-ahmed-325367333" target="_blank">LinkedIn</a>
+          <a class="btn dark" href="mailto:bilalwahla567@gmail.com">Email</a>
+        </div>
+      </header>
+
+      <div class="grid">
+        <main>
+          <section class="section">
+            <div class="card">
+              <h3>About</h3>
+              <p style="color:var(--muted);margin-top:8px">I'm a 2nd-year Software Engineering student at Mehran University of Engineering &amp; Technology (MUET), Jamshoro. I focus on building reliable systems using C++ and Java, and I'm learning full-stack web development & algorithms to level up my craft.</p>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="card">
+              <h3>Skills</h3>
+              <div style="margin-top:12px" class="skills">
+                <div class="skill">C++</div>
+                <div class="skill">Java</div>
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Git</div>
+                <div class="skill">VS Code</div>
+                <div class="skill">IntelliJ</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="card">
+              <h3>Featured Projects</h3>
+              <div style="margin-top:12px" class="projects">
+
+                <!-- Project 1 -->
+                <a class="project" href="https://github.com/kwerjdak/Brabus-Car-System" target="_blank">
+                  <h3>Brabus Car System</h3>
+                  <p>Smart car transformation & control system built using Java. Focus on modular architecture and real-time controls.</p>
+                  <div class="meta"><span class="lang">Java</span><span class="muted">Star & Forks</span></div>
+                </a>
+
+                <!-- Project 2 -->
+                <a class="project" href="https://github.com/kwerjdak/Flight-Management-System" target="_blank">
+                  <h3>Flight Management System</h3>
+                  <p>Console-based flight booking and schedule manager with search and CRUD features.</p>
+                  <div class="meta"><span class="lang">Java</span><span class="muted">Console App</span></div>
+                </a>
+
+                <!-- Project 3 -->
+                <a class="project" href="https://github.com/kwerjdak/ThemeParkSystem3" target="_blank">
+                  <h3>Theme Park System</h3>
+                  <p>Java project managing regular and VIP members with full functionality for assignment-ready execution.</p>
+                  <div class="meta"><span class="lang">Java</span><span class="muted">Assignment</span></div>
+                </a>
+
+                <!-- Project 4 -->
+                <a class="project" href="https://github.com/kwerjdak/Portfolio-Website" target="_blank">
+                  <h3>Portfolio Website</h3>
+                  <p>Responsive single-page portfolio built with modern HTML, CSS and minimal JavaScript. Deploy-ready for GitHub Pages.</p>
+                  <div class="meta"><span class="lang">HTML</span><span class="muted">Web</span></div>
+                </a>
+
+                <!-- Project 5 -->
+                <a class="project" href="https://github.com/kwerjdak/DSA-Collection" target="_blank">
+                  <h3>DSA Collection</h3>
+                  <p>Collection of data structures & algorithms implementations in C++ and Java — from basics to advanced problems.</p>
+                  <div class="meta"><span class="lang">C++ / Java</span><span class="muted">Learning</span></div>
+                </a>
+
+              </div>
+            </div>
+          </section>
+
+        </main>
+
+        <aside>
+          <div class="profile-card card">
+            <div class="stat"><div>
+              <div style="font-size:13px;color:var(--muted)">University</div>
+              <strong>MUET Jamshoro</strong>
+            </div><div class="muted">2nd Year</div></div>
+
+            <div class="stat"><div>
+              <div style="font-size:13px;color:var(--muted)">Degree</div>
+              <strong>Software Engineering</strong>
+            </div><div class="muted">3rd Semester</div></div>
+
+            <div class="stat"><div>
+              <div style="font-size:13px;color:var(--muted)">Location</div>
+              <strong>Jamshoro, Pakistan</strong>
+            </div><div class="muted">Remote-friendly</div></div>
+
+            <div style="margin-top:12px">
+              <h4 style="margin:0 0 8px 0">Quick Links</h4>
+              <a class="btn" style="display:block;margin-bottom:8px;text-align:center" href="https://github.com/kwerjdak" target="_blank">GitHub Profile</a>
+              <a class="btn dark" style="display:block;text-align:center" href="https://www.linkedin.com/in/bilal-ahmed-325367333" target="_blank">LinkedIn</a>
+            </div>
+
+            <div style="margin-top:14px">
+              <h4 style="margin:0 0 8px 0">Contact</h4>
+              <div style="font-size:14px;color:var(--muted);word-break:break-all">bilalwahla567@gmail.com</div>
+            </div>
+
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        <div class="muted">Built with ❤️ — Deploy on GitHub Pages. Username: <strong>kwerjdak</strong></div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Minimal JS for typing animation and small interactions -->
+  <script>
+    // Typing loop
+    const lines = [
+      'Welcome to my GitHub!',
+      'C++ & Java Developer',
+      'Learning Web Development & DSA',
+      "Let's build something awesome! 🚀"
+    ];
+    const el = document.getElementById('type-text');
+    let li = 0, ci = 0, forward = true;
+
+    function tick(){
+      const str = lines[li];
+      if(forward){
+        ci++;
+        if(ci > str.length){ forward = false; setTimeout(tick, 900); return }
+      } else {
+        ci--;
+        if(ci < 0){ forward = true; li = (li+1)%lines.length; setTimeout(tick, 200); return }
+      }
+      el.textContent = str.slice(0, ci);
+      setTimeout(tick, forward?70:35);
+    }
+    tick();
+
+    // Smooth reveal for project cards
+    document.querySelectorAll('.project').forEach((p, i)=>{
+      p.style.opacity = 0; p.style.transform = 'translateY(10px)';
+      setTimeout(()=>{ p.style.transition = 'opacity .6s ease, transform .6s cubic-bezier(.2,.9,.3,1)'; p.style.opacity=1; p.style.transform='translateY(0)'; }, 120*i + 200);
+    });
+  </script>
+</body>
+</html>
